@@ -13,10 +13,20 @@ namespace Lab
         private void Form1_Load(object sender, EventArgs e)
         {
             Connect();
+            ShowData();
+            //string sql = "select * from Products";
+            //da = new SqlDataAdapter(sql, conn);
+            //DataSet ds = new DataSet();
+            //da .Fill(ds);
+            //dataGridView1.DataSource = ds.Tables[0];
+        }
+
+        private void ShowData()
+        {
             string sql = "select * from Products";
             da = new SqlDataAdapter(sql, conn);
             DataSet ds = new DataSet();
-            da .Fill(ds);
+            da.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];
         }
 
